@@ -1,0 +1,15 @@
+{
+	"providerid":"chonqing"，
+	"producttype":"云主机"，
+	"productid":"套餐1|套餐2|自定义",
+	"productitems":[
+	{"itemId":"item1",
+	 "unit":"单位"，
+	 "itemType":"CPU|memory|os|osversion|datadisk|network|freeip",
+	 "datas":"4"
+	}
+	],
+	"productOrderNumber":"2"
+	"orderduration":"11"
+
+}

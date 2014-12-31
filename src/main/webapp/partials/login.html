@@ -1,0 +1,38 @@
+<div class="panel panel-primary" ng-controller="login_controller">
+    <div class="panel-heading">
+        <div class="panel-title">
+           please login
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-horizonal" role="form"></form>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label" for="">user name:</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="user.name" class="form-control"></input>
+                        </div>
+                        <label class="col-md-2 control-label" for="">password:</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="user.password" class="form-control"></input>
+                        </div>
+                        <label class="col-md-2 control-label" for="">message:</label>
+                        <div class="col-md-10">
+                            <input type="text" ng-model="msg.message" class="form-control"></input>
+                        </div>
+
+						<div class="col-md-12">
+                            <button type="button" class="btn btn-default" ng-click="apitest()">go go go</button>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-default" ng-click="login()">login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
