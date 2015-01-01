@@ -25,11 +25,12 @@
 	</Appenders>
 
 	<Loggers>
-		<Logger name="com.roger.loger" level="trace"
+
+		<Logger name="com.roger.loger" level="debug"
 			additivity="true">
 			<AppenderRef ref="running-log" />
 		</Logger>
-		<Root level="debug">
+		<Root level="info">
 			<AppenderRef ref="Console" />
 		</Root>
 	</Loggers>
