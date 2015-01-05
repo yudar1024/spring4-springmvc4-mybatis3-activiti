@@ -4,7 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<settings>
-	<!-- 使用log4j2 显示 sql -->
+	<!-- 使用log4j2 显示 sql-->
 		<setting name="logImpl" value="LOG4J2" />
+
 	</settings>
 </configuration>

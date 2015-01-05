@@ -115,13 +115,13 @@
 			<version>1.2.2</version>
 		</dependency>
 		<!-- do not include this dependency when your deploy the project to local
-		tomcat, tomcat version should > 7.0.43 when run unit test this dependency is needed
+		tomcat, tomcat version should > 7.0.43 when run unit test this dependency is needed -->
 		<dependency>
 			<groupId>tomcat</groupId>
 			<artifactId>servlet</artifactId>
 			<version>4.1.36</version>
 		</dependency>
-		-->
+
 		<dependency>
 			<groupId>org.activiti</groupId>
 			<artifactId>activiti-engine</artifactId>
