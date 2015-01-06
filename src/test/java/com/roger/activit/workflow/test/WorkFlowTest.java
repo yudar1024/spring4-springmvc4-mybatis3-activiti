@@ -190,6 +190,7 @@ public class WorkFlowTest {
 	}
 
 	@Test
+	@Ignore
 	public void testParallelGetWay(){
 		Deployment deployment = repositoryService
 				.createDeployment()
@@ -221,6 +222,34 @@ public class WorkFlowTest {
 		isEnded(processInstance);
 
 	}
+	@Test
+	public void testEvent(){
+		Deployment deployment = repositoryService
+				.createDeployment()
+				.addClasspathResource(
+						"com/roger/activiti/workflow/events.bpmn")
+				.deploy();
+		loger.info("deploy id = " + deployment.getId());
+		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("myProcess");
+		Task payTask = taskService.createTaskQuery().taskAssignee("张三").singleResult();
+		taskService.complete(payTask.getId());
+		processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstance.getId()).singleResult();
+		showActiveTask(processInstance);
+		isEnded(processInstance);
+
+		Task fahuoTask = taskService.createTaskQuery().taskAssignee("李四").singleResult();
+		taskService.complete(fahuoTask.getId());
+		processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstance.getId()).singleResult();
+		showActiveTask(processInstance);
+		isEnded(processInstance);
+		runtimeService.signalEventReceived("notice");
+		 processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstance.getId()).singleResult();
+			showActiveTask(processInstance);
+			isEnded(processInstance);
+
+	}
+
+
 
 	public void  showActiveTask(ProcessInstance processInstance) {
 		if (processInstance!=null) {
