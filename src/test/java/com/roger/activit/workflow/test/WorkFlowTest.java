@@ -71,7 +71,7 @@ public class WorkFlowTest {
 		processInstance = runtimeService.createProcessInstanceQuery()
 				.processInstanceId(pi.getId()).singleResult();
 		isEnded(processInstance);
-		List<Task> list = taskService.createTaskQuery().taskAssignee("ÕÅÈı")
+		List<Task> list = taskService.createTaskQuery().taskAssignee("ï¿½ï¿½ï¿½ï¿½")
 				.list();
 
 		for (Iterator iterator = list.iterator(); iterator.hasNext();) {
@@ -83,7 +83,7 @@ public class WorkFlowTest {
 		processInstance = runtimeService.createProcessInstanceQuery()
 				.processInstanceId(pi.getId()).singleResult();
 		isEnded(processInstance);
-		List<Task> listlisi = taskService.createTaskQuery().taskAssignee("ÀîËÄ")
+		List<Task> listlisi = taskService.createTaskQuery().taskAssignee("ï¿½ï¿½ï¿½ï¿½")
 				.list();
 		for (Iterator iterator = listlisi.iterator(); iterator.hasNext();) {
 			Task task = (Task) iterator.next();
@@ -113,15 +113,15 @@ public class WorkFlowTest {
 		ProcessInstance processInstance = null;
 		processInstance = runtimeService.createProcessInstanceQuery()
 				.processInstanceId(pi.getId()).singleResult();
-		List<Task> list = taskService.createTaskQuery().taskAssignee("ÕÅÈı")
+		List<Task> list = taskService.createTaskQuery().taskAssignee("ï¿½ï¿½ï¿½ï¿½")
 				.list();
 		for (Iterator iterator = list.iterator(); iterator.hasNext();) {
 			Task task = (Task) iterator.next();
 			loger.info("taskid = " + task.getId() + "task name = "
 					+ task.getName());
-			if (task.getName().equals("²¿ÃÅ¾­ÀíÉóÅú")) {
+			if (task.getName().equals("ï¿½ï¿½ï¿½Å¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")) {
 				Map<String, Object> varMap = new HashMap<String, Object>();
-				varMap.put("message", "no");// message ÉèÖÃÎªyes »òÕß no ½«×ß²»Í¬µÄÂ·¾¶
+				varMap.put("message", "no");// message ï¿½ï¿½ï¿½ï¿½Îªyes ï¿½ï¿½ï¿½ï¿½ no ï¿½ï¿½ï¿½ß²ï¿½Í¬ï¿½ï¿½Â·ï¿½ï¿½
 				taskService.complete(task.getId(), varMap);
 			}
 		}
@@ -129,13 +129,13 @@ public class WorkFlowTest {
 		processInstance = runtimeService.createProcessInstanceQuery()
 				.processInstanceId(processInstance.getId()).singleResult();
 		isEnded(processInstance);
-		List<Task> list2 = taskService.createTaskQuery().taskAssignee("ÀîËÄ")
+		List<Task> list2 = taskService.createTaskQuery().taskAssignee("ï¿½ï¿½ï¿½ï¿½")
 				.list();
 		for (Iterator iterator = list2.iterator(); iterator.hasNext();) {
 			Task task = (Task) iterator.next();
 			loger.info("taskid = " + task.getId() + "task name = "
 					+ task.getName());
-			if (task.getName().equals("×Ü¾­ÀíÉóÅú")) {
+			if (task.getName().equals("ï¿½Ü¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")) {
 				taskService.complete(task.getId());
 			}
 		}
@@ -158,7 +158,7 @@ public class WorkFlowTest {
 		ProcessInstance processInstance = null;
 		processInstance = runtimeService.createProcessInstanceQuery()
 				.processInstanceId(pi.getId()).singleResult();
-		Task task = taskService.createTaskQuery().taskAssignee("ÍõÎå").singleResult();
+		Task task = taskService.createTaskQuery().taskAssignee("ï¿½ï¿½ï¿½ï¿½").singleResult();
 		Map<String, Object> vars = new HashMap<String, Object>();
 		vars.put("money", 400);
 		taskService.complete(task.getId(), vars);
@@ -168,13 +168,13 @@ public class WorkFlowTest {
 			loger.info("task id = "+task2.getId()+ " task name =" +task2.getName()+" assignee = "+task2.getAssignee());
 		}
 
-		List<Task> managerTasks = taskService.createTaskQuery().taskAssignee("¾­Àí").list();
+		List<Task> managerTasks = taskService.createTaskQuery().taskAssignee("ï¿½ï¿½ï¿½ï¿½").list();
 		for (Iterator iterator = managerTasks.iterator(); iterator.hasNext();) {
 			Task task2 = (Task) iterator.next();
 			taskService.complete(task2.getId());
 
 		}
-		List<Task> financeTasks = taskService.createTaskQuery().taskAssignee("²ÆÎñ").list();
+		List<Task> financeTasks = taskService.createTaskQuery().taskAssignee("ï¿½ï¿½ï¿½ï¿½").list();
 		for (Iterator iterator = financeTasks.iterator(); iterator.hasNext();) {
 			Task task3 = (Task) iterator.next();
 			taskService.complete(task3.getId());
@@ -200,22 +200,22 @@ public class WorkFlowTest {
 		loger.info("deploy id = " + deployment.getId());
 		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("myProcess");
 		showActiveTask(processInstance);
-		Task payTask = taskService.createTaskQuery().taskAssignee("¹ºÂòÈË").taskName("¸¶¿î").singleResult();
+		Task payTask = taskService.createTaskQuery().taskAssignee("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½").taskName("ï¿½ï¿½ï¿½ï¿½").singleResult();
 		taskService.complete(payTask.getId());
 		processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstance.getId()).singleResult();
 		showActiveTask(processInstance);
 		isEnded(processInstance);
-		Task fahuoTask = taskService.createTaskQuery().taskAssignee("ÉÌ¼Ò").taskName("·¢»õ").singleResult();
+		Task fahuoTask = taskService.createTaskQuery().taskAssignee("ï¿½Ì¼ï¿½").taskName("ï¿½ï¿½ï¿½ï¿½").singleResult();
 		taskService.complete(fahuoTask.getId());
 		processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstance.getId()).singleResult();
 		showActiveTask(processInstance);
 		isEnded(processInstance);
-		Task shoukuanTask = taskService.createTaskQuery().taskAssignee("ÉÌ¼Ò").taskName("ÊÕ¿î").singleResult();
+		Task shoukuanTask = taskService.createTaskQuery().taskAssignee("ï¿½Ì¼ï¿½").taskName("ï¿½Õ¿ï¿½").singleResult();
 		taskService.complete(shoukuanTask.getId());
 		processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstance.getId()).singleResult();
 		showActiveTask(processInstance);
 		isEnded(processInstance);
-		Task shouhuoTask = taskService.createTaskQuery().taskAssignee("¹ºÂòÈË").taskName("ÊÕ»õ").singleResult();
+		Task shouhuoTask = taskService.createTaskQuery().taskAssignee("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½").taskName("ï¿½Õ»ï¿½").singleResult();
 		taskService.complete(shouhuoTask.getId());
 		processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstance.getId()).singleResult();
 		showActiveTask(processInstance);
@@ -231,13 +231,13 @@ public class WorkFlowTest {
 				.deploy();
 		loger.info("deploy id = " + deployment.getId());
 		ProcessInstance processInstance = runtimeService.startProcessInstanceByKey("myProcess");
-		Task payTask = taskService.createTaskQuery().taskAssignee("ÕÅÈı").singleResult();
+		Task payTask = taskService.createTaskQuery().taskAssignee("å¼ ä¸‰").singleResult();
 		taskService.complete(payTask.getId());
 		processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstance.getId()).singleResult();
 		showActiveTask(processInstance);
 		isEnded(processInstance);
 
-		Task fahuoTask = taskService.createTaskQuery().taskAssignee("ÀîËÄ").singleResult();
+		Task fahuoTask = taskService.createTaskQuery().taskAssignee("æå››").singleResult();
 		taskService.complete(fahuoTask.getId());
 		processInstance = runtimeService.createProcessInstanceQuery().processInstanceId(processInstance.getId()).singleResult();
 		showActiveTask(processInstance);
@@ -265,9 +265,9 @@ public class WorkFlowTest {
 
 	public void isEnded(ProcessInstance processInstance){
 		if (processInstance != null) {
-			loger.info("Á÷³Ì»¹ÔÚ¼ÌĞø");
+			loger.info("æµç¨‹è¿˜åœ¨ç»§ç»­");
 		} else {
-			loger.info("Á÷³ÌÒÑ½áÊø");
+			loger.info("æµç¨‹å·²ç»“æŸ");
 		}
 	}
 

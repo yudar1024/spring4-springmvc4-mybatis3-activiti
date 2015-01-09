@@ -13,9 +13,9 @@ import org.activiti.engine.task.Task;
 
 /**
  * 信号中间Throwing事件
- * 
+ *
  * @author yangenxiong
- * 
+ *
  */
 public class SignalThrowingEvent {
 
