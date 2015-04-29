@@ -43,11 +43,17 @@
         <!-- mybatis配置文件自动扫描路径  -->
         <property name="mapperLocations" value="classpath:com/roger/entity/*.xml"></property>
     </bean>
+
+    <!-- Mapper接口所在包名，Spring会自动查找其下的类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.roger.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
+    </bean>
 	<!-- Mybatis end -->
 
-	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg index="0" name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
-    </bean>
+
+
+
 
 
 
