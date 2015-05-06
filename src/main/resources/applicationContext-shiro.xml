@@ -75,8 +75,8 @@
 			<value>
 				/login.html = anon
 				/logout = logout
-				/unauthorized.html = authc
-				/** = user
+				/unauthorized.html = anon
+				/** = anon
 			</value>
 		</property>
 	</bean>

@@ -22,7 +22,7 @@
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"></property>
     </bean>
-
+    <!--  切面 -->
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes >
             <tx:method name="delete*" propagation="REQUIRED" />
