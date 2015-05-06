@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>BSSDemo</name>
+	<name>spring4-springmvc4-mybatis3-activiti</name>
 	<comment></comment>
 	<projects>
 		<project>Billing-Engine-Core</project>
